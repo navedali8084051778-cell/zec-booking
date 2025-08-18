@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZEC | Home Eye Check-up Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #fff;
+    }
+    header h1 {
+      margin: 10px 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background: #000;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #444;
+    }
+    .info {
+      margin-top: 20px;
+      font-size: 14px;
+      background: #f1f1f1;
+      padding: 10px;
+      border-left: 4px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Book Your Home Eye Check-up</h1>
+    <p>Get complete eye check-up at home for just ₹500</p>
+  </header>
+
+  <div class="container">
+    <form onsubmit="sendToWhatsApp(); return false;">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" required>
+
+      <label for="address">Address</label>
+      <textarea id="address" rows="3" required></textarea>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" required>
+
+      <label for="time">Preferred Time</label>
+      <select id="time">
+        <option>Morning (9am - 12pm)</option>
+        <option>Afternoon (12pm - 4pm)</option>
+        <option>Evening (4pm - 7pm)</option>
+      </select>
+
+      <button type="submit">Book Appointment</button>
+    </form>
+
+    <div class="info">
+      <b>Note:</b> Our certified optometrists will visit your home with advanced machines to check:<br>
+      ✔ Vision & Glasses<br>
+      ✔ Cataract, Pterygium, Allergies, Conjunctivitis<br>
+      ✔ Glaucoma risk (IOP Test)<br>
+      ✔ Retina Screening
+    </div>
+  </div>
+
+  <script>
+    function sendToWhatsApp() {
+      var name = document.getElementById("name").value;
+      var phone = document.getElementById("phone").value;
+      var address = document.getElementById("address").value;
+      var date = document.getElementById("date").value;
+      var time = document.getElementById("time").value;
+
+      var message = "👁 ZEC Home Eye Check-up Booking %0A"
+                  + "Name: " + name + "%0A"
+                  + "Phone: " + phone + "%0A"
+                  + "Address: " + address + "%0A"
+                  + "Preferred Date: " + date + "%0A"
+                  + "Preferred Time: " + time;
+
+      var whatsappURL = "https://wa.me/919661188505?text=" + message;
+      window.open(whatsappURL, "_blank");
+    }
+  </script>
+
+</body>
+</html>
