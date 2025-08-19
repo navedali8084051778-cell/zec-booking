@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZEC | Home Eye Check-Up Booking</title>
+<style>
+  body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333; }
+  header { text-align:center; background:#000; color:#fff; padding:20px; }
+  header img { max-height:80px; display:block; margin: auto; }
+  .hero { background: linear-gradient(to right, #4facfe, #00f2fe); color:#fff; text-align:center; padding:60px 20px; }
+  .hero h1 { font-size:36px; margin-bottom:20px; }
+  .hero p { font-size:18px; margin-bottom:30px; }
+  .hero .btn { background:#fff; color:#4facfe; padding:15px 30px; font-size:18px; border-radius:30px; text-decoration:none; display:inline-block; transition:0.3s; }
+  .hero .btn:hover { background:#e0f7ff; }
+
+  .container { max-width:1000px; margin:40px auto; padding:0 20px; }
+
+  h2 { text-align:center; color:#333; margin-bottom:20px; }
+  p, ul { color:#555; line-height:1.6; text-align:center; }
+  ul { list-style:none; padding:0; }
+
+  .services { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+  .services li { width:300px; margin-bottom:30px; }
+  .services img { width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
+
+  form { max-width:500px; margin:auto; text-align:left; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
+  label { margin:10px 0 5px; font-weight:bold; display:block; }
+  input, select, textarea, button { width:100%; padding:10px; margin:5px 0 15px; border-radius:4px; border:1px solid #ccc; font-size:14px; }
+  button { background:#000; color:#fff; border:none; cursor:pointer; font-size:16px; }
+  button:hover { background:#444; }
+
+  footer { background:#333; color:#fff; text-align:center; padding:20px; margin-top:40px; }
+
+  @media (max-width:768px){ .services li{ width:100%; } }
+</style>
+</head>
+<body>
+
+<!-- Header with logo -->
+<header>
+  <img src="https://via.placeholder.com/150x80?text=ZEC+Logo" alt="ZEC Logo">
+  <h1>Zulfi Eye Care</h1>
+</header>
+
+<!-- Hero section -->
+<div class="hero">
+  <h1>Home Eye Check-Up Service</h1>
+  <p>Professional eye care at your doorstep. Comprehensive tests for all ages in the comfort of your home.</p>
+  <a href="#booking" class="btn">Book Your Check-Up</a>
+</div>
+
+<!-- Services Section -->
+<div class="container">
+  <h2>Our Home Eye Check-Up Services</h2>
+  <ul class="services">
+    <li>
+      <img src="https://images.unsplash.com/photo-1588776814546-dca4a67844f7?fit=crop&w=500&h=300" alt="Optometrist in white lab coat">
+      <h3>1. Professional Optometrist Visit</h3>
+      <p>A certified optometrist in a white lab coat visits your home and conducts all examinations with modern equipment.</p>
+    </li>
+    <li>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Slit-lamp.jpg/500px-Slit-lamp.jpg" alt="Cataract through slit lamp">
+      <h3>2. Slit-Lamp Examination</h3>
+      <p>Detect cataract, pterygium, and conjunctivitis accurately using a slit-lamp for detailed anterior eye assessment.</p>
+    </li>
+    <li>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Conjunctivitis.JPG" alt="Conjunctivitis view">
+      <h3>3. Eye Health Assessment</h3>
+      <p>Identify eye infections like conjunctivitis and surface disorders precisely using slit-lamp imaging.</p>
+    </li>
+    <li>
+      <img src="https://images.unsplash.com/photo-1618034797664-8de0d7c2b7eb?fit=crop&w=500&h=300" alt="Auto Refractometer">
+      <h3>4. Auto Refractometer Check</h3>
+      <p>Automatically measure refractive errors to determine accurate eye glass prescription.</p>
+    </li>
+    <li>
+      <img src="https://images.unsplash.com/photo-1605915544078-86cd8b1b1e1b?fit=crop&w=500&h=300" alt="Trial set">
+      <h3>5. Trial Set Examination</h3>
+      <p>Fine-tune your prescription with trial lenses for perfect vision correction and comfort.</p>
+    </li>
+    <li>
+      <img src="https://images.unsplash.com/photo-1596464716121-11e676a108c3?fit=crop&w=500&h=300" alt="Vision Test">
+      <h3>6. Vision Acuity Test</h3>
+      <p>Detect near and far sight issues using standard vision charts during home visit.</p>
+    </li>
+    <li>
+      <img src="https://images.unsplash.com/photo-1604537529428-3a0f1cb6b24b?fit=crop&w=500&h=300" alt="IOP Test">
+      <h3>7. Intraocular Pressure (IOP) Test</h3>
+      <p>Measure eye pressure to detect glaucoma risk and prevent vision loss.</p>
+    </li>
+    <li>
+      <img src="https://images.unsplash.com/photo-1588776814546-dca4a67844f7?fit=crop&w=500&h=300" alt="Eye Care Counseling">
+      <h3>8. Personalized Eye Care Advice</h3>
+      <p>Receive guidance on eye care, lifestyle, and prescription glasses if required.</p>
+    </li>
+  </ul>
+</div>
+
+<!-- Booking Section -->
+<div class="container" id="booking">
+  <h2 style="text-align:center; margin-bottom:20px;">Book Your Home Check-Up</h2>
+  <form onsubmit="sendToWhatsApp(); return false;">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" required>
+
+    <label for="address">Address</label>
+    <textarea id="address" rows="3" required></textarea>
+
+    <label for="area">Area (Distance from Govindpuri Metro)</label>
+    <select id="area" onchange="updateCharges()" required>
+      <option value="">--Select Area--</option>
+      <option value="10">Govindpuri / Nearby (10 km)</option>
+      <option value="15">Okhla (15 km)</option>
+      <option value="35">Noida Sector 15 (35 km)</option>
+      <option value="40">Faridabad (40 km)</option>
+      <option value="50">Gurgaon (50 km)</option>
+    </select>
+
+    <label for="date">Preferred Date</label>
+    <input type="date" id="date" required>
+
+    <label for="time">Preferred Time</label>
+    <select id="time">
+      <option>Morning (9am - 12pm)</option>
+      <option>Afternoon (12pm - 4pm)</option>
+      <option>Evening (4pm - 7pm)</option>
+    </select>
+
+    <p><b>Total Charges: ₹<span id="totalCharges">500</span></b></p>
+
+    <button type="submit">Book Appointment</button>
+  </form>
+</div>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Zulfi Eye Care. All rights reserved.
+</footer>
+
+<script>
+const baseCharge = 500;
+const borderCharge = 200;
+
+function updateCharges() {
+  const distance = parseInt(document.getElementById("area").value);
+  let total = baseCharge;
+  if(distance > 30) total += borderCharge;
+  document.getElementById("totalCharges").innerText = total;
+}
+
+function sendToWhatsApp() {
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const address = document.getElementById("address").value;
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("time").value;
+  const areaText = document.getElementById("area").options[document.getElementById("area").selectedIndex].text;
+  const total = document.getElementById("totalCharges").innerText;
+
+  const message = "👁 ZEC Home Eye Check-up Booking %0A"
+                + "Name: " + name + "%0A"
+                + "Phone: " + phone + "%0A"
+                + "Address: " + address + "%0A"
+                + "Area: " + areaText + "%0A"
+                + "Preferred Date: " + date + "%0A"
+                + "Preferred Time: " + time + "%0A"
+                + "Total Charges: ₹" + total;
+
+  const whatsappURL = "https://wa.me/919661188505?text=" + message;
+  window.open(whatsappURL, "_blank");
+}
+</script>
+</body>
+</html>
