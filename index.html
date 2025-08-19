@@ -21,14 +21,16 @@
   ul { list-style:none; padding:0; }
 
   .services { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-  .services li { width:300px; margin-bottom:30px; }
-  .services img { width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
+  .services li { width:250px; margin-bottom:30px; }
+  .services img { width:100%; height:150px; object-fit:cover; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
 
   form { max-width:500px; margin:auto; text-align:left; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
   label { margin:10px 0 5px; font-weight:bold; display:block; }
   input, select, textarea, button { width:100%; padding:10px; margin:5px 0 15px; border-radius:4px; border:1px solid #ccc; font-size:14px; }
   button { background:#000; color:#fff; border:none; cursor:pointer; font-size:16px; }
   button:hover { background:#444; }
+
+  .billing { background:#f1f1f1; padding:15px; border-radius:8px; margin-top:10px; font-weight:bold; text-align:center; }
 
   footer { background:#333; color:#fff; text-align:center; padding:20px; margin-top:40px; }
 
@@ -46,53 +48,49 @@
 <!-- Hero section -->
 <div class="hero">
   <h1>Home Eye Check-Up Service</h1>
-  <p>Professional eye care at your doorstep. Comprehensive tests for all ages in the comfort of your home.</p>
+  <p>Professional eye care at your doorstep with detailed exams and consultation.</p>
   <a href="#booking" class="btn">Book Your Check-Up</a>
 </div>
 
 <!-- Services Section -->
 <div class="container">
-  <h2>Our Home Eye Check-Up Services</h2>
+  <h2>Our Services</h2>
   <ul class="services">
     <li>
       <img src="images/optometrist.jpg" alt="Optometrist in white lab coat">
-      <h3>1. Professional Optometrist Visit</h3>
-      <p>A certified optometrist in a white lab coat visits your home and conducts all examinations with modern equipment.</p>
+      <h3>Professional Optometrist Visit</h3>
     </li>
     <li>
       <img src="images/slitlamp.jpg" alt="Cataract through slit lamp">
-      <h3>2. Slit-Lamp Examination</h3>
-      <p>Detect cataract, pterygium, and conjunctivitis accurately using a slit-lamp for detailed anterior eye assessment.</p>
+      <h3>Slit-Lamp Examination</h3>
     </li>
     <li>
       <img src="images/conjunctivitis.jpg" alt="Conjunctivitis view">
-      <h3>3. Eye Health Assessment</h3>
-      <p>Identify eye infections like conjunctivitis and surface disorders precisely using slit-lamp imaging.</p>
+      <h3>Conjunctivitis & Eye Health Assessment</h3>
     </li>
     <li>
       <img src="images/autorefractometer.jpg" alt="Auto Refractometer">
-      <h3>4. Auto Refractometer Check</h3>
-      <p>Automatically measure refractive errors to determine accurate eye glass prescription.</p>
+      <h3>Auto Refractometer Check</h3>
     </li>
     <li>
       <img src="images/trialset.jpg" alt="Trial set">
-      <h3>5. Trial Set Examination</h3>
-      <p>Fine-tune your prescription with trial lenses for perfect vision correction and comfort.</p>
+      <h3>Trial Set Examination for Glasses</h3>
     </li>
     <li>
       <img src="images/visiontest.jpg" alt="Vision Test">
-      <h3>6. Vision Acuity Test</h3>
-      <p>Detect near and far sight issues using standard vision charts during home visit.</p>
+      <h3>Vision Acuity Test</h3>
     </li>
     <li>
       <img src="images/iop.jpg" alt="IOP Test">
-      <h3>7. Intraocular Pressure (IOP) Test</h3>
-      <p>Measure eye pressure to detect glaucoma risk and prevent vision loss.</p>
+      <h3>Intraocular Pressure (IOP) Test</h3>
     </li>
     <li>
       <img src="images/counseling.jpg" alt="Eye Care Counseling">
-      <h3>8. Personalized Eye Care Advice</h3>
-      <p>Receive guidance on eye care, lifestyle, and prescription glasses if required.</p>
+      <h3>Eye Care Advice</h3>
+    </li>
+    <li>
+      <img src="images/surgery.jpg" alt="Eye Surgery Consultation">
+      <h3>Ophthalmology (Eye Surgery) Consultation</h3>
     </li>
   </ul>
 </div>
@@ -107,17 +105,13 @@
     <label for="phone">Phone Number</label>
     <input type="tel" id="phone" required>
 
-    <label for="address">Address</label>
-    <textarea id="address" rows="3" required></textarea>
+    <label for="location">Location</label>
+    <input type="text" id="location" placeholder="Enter your area/location" required>
 
-    <label for="area">Area (Distance from Govindpuri Metro)</label>
-    <select id="area" onchange="updateCharges()" required>
-      <option value="">--Select Area--</option>
-      <option value="10">Govindpuri / Nearby (10 km)</option>
-      <option value="15">Okhla (15 km)</option>
-      <option value="35">Noida Sector 15 (35 km)</option>
-      <option value="40">Faridabad (40 km)</option>
-      <option value="50">Gurgaon (50 km)</option>
+    <label for="surgery">Include Eye Surgery Consultation? (₹1000)</label>
+    <select id="surgery" onchange="updateCharges()">
+      <option value="0">No</option>
+      <option value="1000">Yes</option>
     </select>
 
     <label for="date">Preferred Date</label>
@@ -130,42 +124,60 @@
       <option>Evening (4pm - 7pm)</option>
     </select>
 
-    <p><b>Total Charges: ₹<span id="totalCharges">500</span></b></p>
+    <div class="billing">
+      Base Charge: ₹500<br>
+      Extra for location >20 km from Red Fort: ₹200<br>
+      Eye Surgery Consultation: ₹<span id="surgeryCharge">0</span><br>
+      <b>Total Charges: ₹<span id="totalCharges">500</span></b>
+    </div>
 
     <button type="submit">Book Appointment</button>
   </form>
 </div>
 
-<!-- Footer -->
 <footer>
   &copy; 2025 Zulfi Eye Care. All rights reserved.
 </footer>
 
 <script>
 const baseCharge = 500;
-const borderCharge = 200;
+const extraChargeDistance = 200;
 
 function updateCharges() {
-  const distance = parseInt(document.getElementById("area").value);
-  let total = baseCharge;
-  if(distance > 30) total += borderCharge;
+  const location = document.getElementById("location").value.toLowerCase();
+  const surgeryCharge = parseInt(document.getElementById("surgery").value);
+  document.getElementById("surgeryCharge").innerText = surgeryCharge;
+
+  // Simple distance calculation simulation based on keywords
+  let distanceCharge = 0;
+  if(location.includes("noida") || location.includes("gurgaon") || location.includes("faridabad") || location.includes("greater noida")){
+    distanceCharge = extraChargeDistance;
+  }
+
+  const total = baseCharge + distanceCharge + surgeryCharge;
   document.getElementById("totalCharges").innerText = total;
 }
 
 function sendToWhatsApp() {
+  updateCharges();
   const name = document.getElementById("name").value;
   const phone = document.getElementById("phone").value;
-  const address = document.getElementById("address").value;
+  const location = document.getElementById("location").value;
   const date = document.getElementById("date").value;
   const time = document.getElementById("time").value;
-  const areaText = document.getElementById("area").options[document.getElementById("area").selectedIndex].text;
+  const surgery = document.getElementById("surgery").options[document.getElementById("surgery").selectedIndex].text;
   const total = document.getElementById("totalCharges").innerText;
+
+  if(location.trim() === "") {
+    alert("Please enter your location.");
+    return;
+  }
 
   const message = "👁 ZEC Home Eye Check-up Booking %0A"
                 + "Name: " + name + "%0A"
                 + "Phone: " + phone + "%0A"
-                + "Address: " + address + "%0A"
-                + "Area: " + areaText + "%0A"
+                + "Location: " + location + "%0A"
+                + "Eye Surgery Consultation: " + surgery + "%0A"
                 + "Preferred Date: " + date + "%0A"
                 + "Preferred Time: " + time + "%0A"
                 + "Total Charges: ₹" + total;
